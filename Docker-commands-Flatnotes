@@ -1,0 +1,10 @@
+docker run --restart=always -d \
+  -e "PUID=1000" \
+  -e "PGID=1000" \
+  -e "FLATNOTES_AUTH_TYPE=password" \
+  -e "FLATNOTES_USERNAME=user" \
+  -e "FLATNOTES_PASSWORD=1234" \
+  -e "FLATNOTES_SECRET_KEY=aLongRandomSeriesOfCharacters" \
+  -v "$(pwd)/data:/data" \
+  -p "10000:8080" \
+  dullage/flatnotes:latest
